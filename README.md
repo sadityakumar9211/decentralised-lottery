@@ -35,5 +35,6 @@ This is a completely decentralised Lottery(Raffle) System which utilizes followi
  ```
  visit this url: 
  [https://cold-dew-1053.on.fleek.co/](https://cold-dew-1053.on.fleek.co/)
+ change the account in the metamask to hardhat localhost. 
  
  
