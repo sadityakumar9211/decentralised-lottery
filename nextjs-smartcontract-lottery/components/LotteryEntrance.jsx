@@ -142,6 +142,7 @@ export default function LotteryEntrance() {
                     </div>
                     <div>Number of Players entered yet: {numPlayers}</div>
                     <div>Recent Winner: {recentWinner}</div>
+                    <div>view contract <a href="https://rinkeby.etherscan.io/address/0x5A8B9788F9FC1692af894E13129f461ce643A1c5">@etherscan</a></div>
                 </div>
             ) : (
                 <h4>No Raffle Address Detected!</h4>
