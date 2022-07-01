@@ -49,7 +49,7 @@ module.exports = async function ({ getNamedAccouts, deployments }) {
         from: deployer,
         args: args,
         log: true,
-        waitCofirmations: network.config.blockConfirmations || 1,
+        waitCofirmations: networkConfig[chainId]["waitConfirmations"] || 1,
     })
     log("Raffle.sol smart contract deployed!")
     log("##############################################")

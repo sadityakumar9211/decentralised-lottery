@@ -12,6 +12,7 @@ const networkConfig = {     //all the parameters that are different chain-to-cha
         subscriptionId: 7203,
         callbackGasLimit: "500000",
         interval: "30", //30 seconds
+        waitConfirmations: 6,
     }, 
     31337: {
         name: "hardhat",
@@ -19,6 +20,7 @@ const networkConfig = {     //all the parameters that are different chain-to-cha
         gasLane: "0xd89b2bf150e3b9e13446986e571fb9cab24b13cea0a43ea20a6049a85cc807cc",
         callbackGasLimit: "500000",
         interval: "30",
+        waitConfirmations: 1,
     }
 
 }

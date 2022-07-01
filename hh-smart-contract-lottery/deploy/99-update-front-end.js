@@ -20,21 +20,27 @@ module.exports = async function () {
 async function updateContractAddress() {
     const raffle = await ethers.getContract("Raffle")
     const chainId = network.config.chainId.toString()
-    const currentAddress = await JSON.parse(fs.readFileSync(FRONTEND_LOCATION_ADDRESSES_FILE, "utf8"))
-    if (chainId in currentAddress) {      //is the chainId supported
-        if(!currentAddress[chainId].includes(raffle.address)){
+    const currentAddress = await JSON.parse(
+        fs.readFileSync(FRONTEND_LOCATION_ADDRESSES_FILE, "utf8")
+    )
+    if (chainId in currentAddress) {
+        //is the chainId supported
+        if (!currentAddress[chainId].includes(raffle.address)) {
             currentAddress[chainId].push(raffle.address)
         }
-    }else{
+    } else {
         currentAddress[chainId] = [raffle.address]
     }
     //updated the object and now writing to the file.
     await fs.writeFileSync(FRONTEND_LOCATION_ADDRESSES_FILE, JSON.stringify(currentAddress))
 }
 
-async function updateAbi(){
+async function updateAbi() {
     const raffle = await ethers.getContract("Raffle")
-    fs.writeFileSync(FRONTEND_LOCATION_ABI_FILE, raffle.interface.format(ethers.utils.FormatTypes.json))
+    fs.writeFileSync(
+        FRONTEND_LOCATION_ABI_FILE,
+        raffle.interface.format(ethers.utils.FormatTypes.json)
+    )
 }
 
 module.exports.tags = ["all", "frontend"]
